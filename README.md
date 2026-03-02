@@ -29,35 +29,35 @@ Basic RAG understanding, to advance tutorials
 # Topics included in RAG
 
 RAG
-    - encoding methods
-        -Bi-encoder
+    1. encoding methods
+        - Bi-encoder
         - Cross-encoder
-    - vectorDB
-    - chunking
+    2. vectorDB
+    3. chunking
         - token-based
         - recursive text
         - parent doc chunking
-    - doc parsing
-    - conversation memory
-    - Advance
-        - Hybrid-RAG
+    4. doc parsing
+    5. conversation memory
+    6. Advance
+        A. Hybrid-RAG
             - re-ranking
-        - Graph-RAG
+        B. Graph-RAG
             - Knowledge graph
-        - Agentic RAG
-        - Reflection
-        - self-ask
+        C. Agentic RAG
+        D. Reflection
+        E. self-ask
 
 # RAG Steps
 
 Steps
-    - Step 1 — Document Loading: Load PDFs, CSVs, Web pages, DB data.
-    - Step 2 — Chunking: Break long docs into smaller pieces.
-    - Step 3 — Embedding: Convert chunks into vectors.
-    - Step 4 — Store in Vector DB: So we can search via similarity.
-    - Step 5 — Retrieval: Convert query → embedding → similarity search.
-    - Step 6 — Augment Prompt: Attach retrieved chunks to prompt.
-    - Step 7 — Generate Answer: LLM answers using retrieved context.
+    1. Document Loading: Load PDFs, CSVs, Web pages, DB data.
+    2. Chunking: Break long docs into smaller pieces.
+    3. Embedding: Convert chunks into vectors.
+    4. Store in Vector DB: So we can search via similarity.
+    5. Retrieval: Convert query → embedding → similarity search.
+    6. Augment Prompt: Attach retrieved chunks to prompt.
+    7. Generate Answer: LLM answers using retrieved context.
 
 
 ## What it includes
