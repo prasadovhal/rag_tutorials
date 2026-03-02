@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "langchain-demo"
+version = "0.1.0"
+description = "LangChain & prompt engineering demo setup"
+package-mode = false
+authors = ["Prasad Ovhal"]
+
+[tool.poetry.dependencies]
+python = "3.11.*"
+torch = {version = "^2.5.1", source = "pytorch-cu121"}
+torchvision = {version = "^0.20.1", source = "pytorch-cu121"}
+torchaudio = {version = "^2.5.1", source = "pytorch-cu121"}
+transformers = "*"
+datasets = "*"
+evaluate = "*"
+accelerate = "*"
+timm = "*"
+safetensors = "*"
+langchain = "*"
+langchain-core = "*"
+langchain-community = "*"
+langchain-openai = "*"
+langchain-google-genai = "*"
+google-generativeai = "*"
+langfuse = "^3.14.5"
+pydantic = "^2"
+scikit-learn = "^1.5"
+seaborn = "^0.13.2"
+chromadb = "^1.5.2"
+faiss-cpu = "^1.13.2"
+sentence-transformers = "^5.2.3"
+tiktoken = "^0.12.0"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "*"
+
+[[tool.poetry.source]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
