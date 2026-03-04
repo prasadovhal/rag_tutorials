@@ -32,6 +32,13 @@ Basic RAG understanding, to advance tutorials
     - Bi-encoder
     - Cross-encoder
 2. vectorDB
+    - FAISS = Facebook AI Similarity Search
+    - Chroma
+    - Qdrant
+    - Pinecone
+    - Weaviate
+    - Milvus
+    - Elasticsearch (Dense vectors)
 3. chunking
     - token-based
     - recursive text
@@ -59,3 +66,23 @@ Basic RAG understanding, to advance tutorials
 
 
 ## What it includes
+1. Basic RAG pipeline with bi-encoder
+2. Basic RAG pipeline with cross-encoder
+3. Vector DB's
+    - Chroma DB
+    - Qdrant
+    - Pinecone
+    - weaviate
+    - Milvus
+    - Elasticsearch
+4. chunking
+    - Manual chunking
+    - token based chunking
+    - Recursive Chunking
+    - parent doc chunking
+    - Retreival - BM25
+5. Hybrid retreival
+    - BM25
+6. doc parsing
+    - docling
+
