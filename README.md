@@ -85,4 +85,6 @@ Basic RAG understanding, to advance tutorials
     - BM25
 6. doc parsing
     - docling
-
+7. Conversation memory
+8. Agentic RAG
+    - 
