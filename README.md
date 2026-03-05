@@ -47,7 +47,7 @@ Basic RAG understanding, to advance tutorials
 5. conversation memory
 6. Advance
     - Hybrid-RAG
-        - re-ranking
+        - re-ranking : [CLS] query [SEP] doc -> from these CLS embedding is calculated using self attention, then re-rank score = W * CLS embedding + b (where as W and B are calculated using gradient descent & Logistic Regression)
     - Graph-RAG
         - Knowledge graph
     - Agentic RAG
@@ -81,8 +81,10 @@ Basic RAG understanding, to advance tutorials
     - Recursive Chunking
     - parent doc chunking
     - Retreival - BM25
-5. Hybrid retreival
-    - BM25
+5. retreival
+    - dense search retrieval (meaning, dense search cosine similarity between query & doc) 
+    - BM25 (TF-IDF score, exact keywords)
+    - hybrid (0.5 * dense search cosine similarity + 0.5 * BM25 TF-IDF score)
 6. doc parsing
     - docling
 7. Conversation memory
