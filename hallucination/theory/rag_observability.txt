@@ -1,0 +1,36 @@
+need: Is the RAG system working correctly in production?
+
+metrics:
+    1. Hallucination Rate
+        - Percentage of answers that contain information not supported by the retrieved context.
+        - hallucination_rate = hallucinated_answers / total_answers
+            | Rate  | Meaning                    |
+            | ----- | -------------------------- |
+            | <5%   | Very good                  |
+            | 5–15% | Acceptable                 |
+            | >20%  | Retrieval or prompt issues |
+    2. Retrieval Accuracy
+        - How often the retriever returns the correct documents needed to answer the query.
+            | Accuracy | Meaning                |
+            | -------- | ---------------------- |
+            | >90%     | Excellent              |
+            | 70–90%   | Good                   |
+            | <70%     | Retriever needs tuning |
+    3. Context Quality
+        - How useful the retrieved context is for answering the question.
+    4. Guardrail Triggers
+        - How often guardrails are activated to block or correct model behavior.
+
+*** 60–70% hallucinations come from retrieval problems
+
+
+# Hallucination score 
+
+Hallucination Score vs Hallucination Rate
+
+1. Hallucination Score 
+    - Measures degree of hallucination for one answer.
+    - Hallucination score = 0.2 -> 20% of the answer content is hallucinated.
+Hallucination Rate 
+    - Measures percentage of hallucinated answers in a dataset.
+    - Hallucination rate = 12% -> 12 out of every 100 answers contain hallucinations.

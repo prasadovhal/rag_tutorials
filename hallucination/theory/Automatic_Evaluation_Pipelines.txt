@@ -1,0 +1,33 @@
+def :
+    - Instead of humans checking thousands of model answers, an automated system evaluates them continuously.
+
+need:
+    1. scale : for large no.of queries, manual evaluation is issue
+    2. Continuous Deployment: if changes in any component of RAG
+    3. Production Monitoring: retreviel drift, etc
+
+Architecture
+    
+    Gold Dataset
+        ↓
+    RAG System
+        ↓
+    Generated Answers (Collect Intermediate Data)
+        ↓
+    Evaluation Metrics (check hallucination metric)
+        ↓
+    Performance Scores
+
+# do Batch evaluations
+
+
+# A/B Testing
+
+- Automatic evaluation pipelines allow comparing systems.
+- System A - BM25
+  System B - Hybrid
+
+    | Metric             | System A | System B |
+    | ------------------ | -------- | -------- |
+    | retrieval accuracy | 82%      | 91%      |
+    | hallucination rate | 15%      | 7%       |

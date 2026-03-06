@@ -41,6 +41,9 @@ pymupdf = "^1.27.1"
 docling = "^2.76.0"
 transformers = "^4.44"
 sentence-transformers = "^5.2.3"
+trulens-eval = "^2.7.0"
+tqdm = "^4.67.3"
+langchain-huggingface = "^1.2.1"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "*"

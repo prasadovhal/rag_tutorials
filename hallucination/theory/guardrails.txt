@@ -1,0 +1,67 @@
+def : safety and control mechanisms placed around an LLM
+        LLM = engine
+        Guardrails = safety boundaries
+
+prevent:
+- hallucinations
+- unsafe outputs
+- harmful instructions
+- policy violations
+- incorrect format responses
+
+location in pipeline
+
+    User Query
+    ↓
+    Input Guardrails
+    ↓
+    Retriever (RAG)
+    ↓
+    LLM
+    ↓
+    Output Guardrails
+    ↓
+    Final Response
+
+Types:
+    1. Rule-Based Guardrails
+        - content moderation
+        - policy enforcemen
+    2. LLM-based Guardrails
+        - Check if the answer is supported by the context.
+    3. Schema Guardrails
+        - Ensure outputs follow a specific structure.
+    4. Confidence Guardrails
+        - Check retrieval scores.
+        - This prevents hallucination when context is weak.
+    5. Moderation Guardrails
+        - Detect harmful content.
+
+#### Advanced Guardrail Methods
+
+Instead of trusting one single generation, the system adds verification layers.
+1. Write answer
+2. Check it
+3. Verify evidence
+3. Cross-validate
+
+Types
+
+1. Chain-of-Verification (CoVe)
+    - The system generates an answer and then verifies each claim step-by-step.
+    - after answer is generated questions are asked on answer and evidence
+2. Self-Reflection
+    - The model critiques its own answer and tries to improve it.
+3. Fact-Checking Models
+    - A separate model verifies factual claims.
+    - new fact checker model
+4. Confidence Scoring
+    - The system estimates how confident it is about an answer.
+        | Source               | Example                   |
+        | -------------------- | ------------------------- |
+        | Retrieval similarity | document similarity score |
+        | Token probabilities  | LLM prediction confidence |
+        | Verification score   | fact check result         |
+        | Consensus score      | multiple model agreement  |
+5. Multi-Agent Verification
+    - Multiple LLM agents check each other's answers.

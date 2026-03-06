@@ -209,3 +209,4 @@ __marimo__/
 constant.py
 codes/chroma_db/*
 competitions/FinanceRAG/data/*
+*.csv

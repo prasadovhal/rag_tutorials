@@ -47,6 +47,7 @@ embedding_model = SentenceTransformer("BAAI/bge-base-en")
 
 embeddings = embedding_model.encode(chunks)
 
+###############################################################
 
 # Build FAISS vector index
 

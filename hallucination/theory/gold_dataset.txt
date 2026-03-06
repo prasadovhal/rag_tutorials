@@ -1,0 +1,62 @@
+# def : 
+- collection of questions with correct answers and supporting documents used to evaluate a RAG system.
+- benchmark or exam answer key
+
+# need
+- measure hallucination rate
+- compare two retrieval strategies
+- run A/B testing
+- benchmark system improvements
+
+# what it contain
+
+    | Field                | Meaning                    |
+    | -------------------- | -------------------------- |
+    | query                | user question              |
+    | ground_truth_answer  | correct answer             |
+    | ground_truth_context | document containing answer |
+    | metadata             | optional information       |
+
+# example:
+
+{
+ "query": "Who invented the telephone?",
+ "ground_truth_answer": "Alexander Graham Bell invented the telephone.",
+ "ground_truth_context": "Alexander Graham Bell invented the telephone in 1876.",
+ "metadata": {
+   "topic": "history",
+   "difficulty": "easy"
+ }
+}
+
+
+# Types
+    1. Retrieval Gold Dataset
+    2. QA Gold Dataset
+    3. RAG Gold Dataset
+
+
+# how to create
+    1. Manual Creation (Human Experts)
+    2. Synthetic Dataset Generation
+    3. Real User Logs
+    4. Hybrid Method: combine above 3
+
+
+# Important Dataset Design Considerations
+    1. A good dataset should include diverse queries.
+        | Type              | Example                                         |
+        | ----------------- | ----------------------------------------------- |
+        | fact lookup       | Who invented telephone?                         |
+        | reasoning         | Why does gravity occur?                         |
+        | multi-hop         | Who invented the company that built Tesla cars? |
+        | long context      | summarization questions                         |
+        | ambiguous queries | explain python                                  |
+    2. should include all level of difficulty queries
+
+
+# Dataset Bias Problems
+    - Poor datasets cause misleading evaluation.
+    - Distribution bias: in terms of difficulty
+    - Retrieval leakage: If answers exist exactly in training examples.
+    - Short-answer bias: dataset has 1 word answers

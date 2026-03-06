@@ -1,0 +1,50 @@
+# How to Measure Hallucination
+    1. Faithfulness 
+    2. Groundedness 
+    3. Answer correctness 
+    4. Context relevance
+    5. Answer Relevance
+    6. Context Recall  
+    7. Context Precision
+
+def 
+1. Context relevance → How relevant the retrieved documents are to the query.
+2. Faithfulness → no extra information added
+3.Groundedness → evidence exists for each claim
+4. Answer correctness → Whether the answer is factually correct compared to the ground truth.
+5. Answer Relevance →
+    - Does the generated answer actually answer the user’s question?
+    - Even if the answer is factually correct, it may not answer the specific question asked.
+6. Context Recall → 
+    - Did the retriever retrieve all important documents needed to answer the question?
+    - Important docs retrieved / Total important docs
+7. Context Precision →
+    - How much of the retrieved context is actually relevant.
+    - Relevant retrieved docs / Total retrieved docs
+
+Query ↔ Context → Context relevance
+Context ↔ Answer → Faithfulness / Groundedness
+Answer ↔ Truth → Answer correctness
+
+
+
+example:
+
+query : Who invented the telephone?
+Retrieved Context :
+    Doc1: Alexander Graham Bell invented the telephone.
+    Doc2: The Eiffel Tower is in Paris.
+Generated Answer:
+    Alexander Graham Bell invented the telephone in 1876.
+
+metrics →
+
+Context relevance  → Medium  → One doc relevant
+Context precision  → 50%	 → 1 relevant out of 2
+Context recall	   → Low	 → Missing patent document
+Faithfulness       → Low     → "1876" not in context
+Groundedness	   → Partial → Claim unsupported
+Answer relevance   → High	 → Question answered
+Answer correctness → Correct →	Bell invented telephone
+
+
