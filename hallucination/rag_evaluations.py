@@ -547,10 +547,10 @@ def count_tokens(text):
 
 token_stats = []
 
-for r in results_local:
+for r in results_local[:2]:
 
-    input_tokens = count_tokens(r["contexts"] + r["query"])
-    output_tokens = count_tokens(r["answer"])
+    input_tokens = count_tokens(" ".join(r["retrieved_contexts"]) + r["user_input"])
+    output_tokens = count_tokens(r["response"])
 
     token_stats.append({
         "input": input_tokens,
