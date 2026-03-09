@@ -43,6 +43,7 @@ Basic RAG understanding, to advance tutorials
     - token-based
     - recursive text
     - parent doc chunking
+    - adaptive chunk size
 4. doc parsing
 5. conversation memory
 6. Advance
@@ -81,6 +82,7 @@ Basic RAG understanding, to advance tutorials
     - Recursive Chunking
     - parent doc chunking
     - Retreival - BM25
+    - adaptive chunking
 5. retreival
     - dense search retrieval (meaning, dense search cosine similarity between query & doc) 
     - BM25 (TF-IDF score, exact keywords)
@@ -88,5 +90,9 @@ Basic RAG understanding, to advance tutorials
 6. doc parsing
     - docling
 7. Conversation memory
-8. Agentic RAG
+8. Hallucination
+    - definantion
+    - LLM metrics, benchmarks
+    - gold dataset
+9. Agentic RAG
     - 
