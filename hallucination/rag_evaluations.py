@@ -517,10 +517,10 @@ print("Average Latency:", avg_latency)
 retrieval_latencies = []
 generation_latencies = []
 
-for _, row in df.iterrows():
+for _, row in df.iloc[:5, :].iterrows():
 
     start_r = time.time()
-    docs = retriever.get_relevant_documents(row["query"])
+    docs = retriever.invoke(row["query"])
     retrieval_latencies.append(time.time() - start_r)
 
     context = " ".join([d.page_content for d in docs])
@@ -528,7 +528,7 @@ for _, row in df.iterrows():
     prompt = f"{context}\n{row['query']}"
 
     start_g = time.time()
-    answer = llm(prompt)
+    answer = llm.invoke(prompt).strip()
     generation_latencies.append(time.time() - start_g)
 
 print("Retrieval latency:", sum(retrieval_latencies)/len(retrieval_latencies))
