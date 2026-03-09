@@ -31,6 +31,6 @@ Hallucination Score vs Hallucination Rate
 1. Hallucination Score 
     - Measures degree of hallucination for one answer.
     - Hallucination score = 0.2 -> 20% of the answer content is hallucinated.
-Hallucination Rate 
+2. Hallucination Rate 
     - Measures percentage of hallucinated answers in a dataset.
     - Hallucination rate = 12% -> 12 out of every 100 answers contain hallucinations.

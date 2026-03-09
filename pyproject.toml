@@ -44,6 +44,9 @@ sentence-transformers = "^5.2.3"
 trulens-eval = "^2.7.0"
 tqdm = "^4.67.3"
 langchain-huggingface = "^1.2.1"
+deepeval = {extras = ["ollama"], version = "^3.8.9"}
+ollama = "^0.6.1"
+bert-score = "^0.3.13"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "*"

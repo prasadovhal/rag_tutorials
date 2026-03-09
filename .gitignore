@@ -210,3 +210,4 @@ constant.py
 codes/chroma_db/*
 competitions/FinanceRAG/data/*
 *.csv
+*.json

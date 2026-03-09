@@ -48,3 +48,31 @@ Answer relevance   → High	 → Question answered
 Answer correctness → Correct →	Bell invented telephone
 
 
+##############################################################
+
+Key Metric Deep Dive
+1. Generation Triad (The "RAG Triad")
+    Faithfulness: Measures if the answer is derived only from the context. A score of 0.9 means 90% of the claims made by the LLM are supported by the retrieved documents.
+    Answer Relevancy: Measures if the answer actually addresses the user's prompt. It ignores factual truth and focuses on "is this what the user asked for?"
+    Hallucination Rate: The inverse of faithfulness. In production, a rate above 5% is usually a "stop-ship" blocker for enterprise apps.
+
+2. Retrieval Metrics
+    Context Precision: Evaluates if the most relevant documents are at the top of the search results.
+    Context Recall: Evaluates if the search actually found all the necessary information needed to answer the question. If this is low, the LLM has no choice but to hallucinate.
+
+3. Operational Metrics
+    Latency (TTFT): Time to First Token. For a "snappy" feel, you want this under 1 second. Once it hits 10 seconds, users typically abandon the session.
+    Token Usage: This is a cost metric. There is no "best" number, but it is managed via "Budget per Query" (e.g., keeping average cost per query under $0.01).
+    Drift Detection: Usually measured via Cosine Distance between current output embeddings and a "Golden Dataset." A drift (distance) increase of >15% indicates the model behavior has shifted significantly from its baseline.
+
+4. LLM as a Judge
+    This is the methodology used to calculate most of the above. Instead of rigid math, a "stronger" model (like GPT-4o or Claude 3.5 Sonnet) acts as the grader for a "weaker" or faster production model.
+    Note on Drift: If you see your Drift Detection score climb, it usually means your users are asking new types of questions that your current retrieval system or prompt isn't optimized for.
+
+##################################
+
+- If this metric is LOW...,The likely culprit is...
+- Context Recall,Your search index (Vector DB) or embedding model is weak.
+- Context Precision,You are retrieving too many documents or your reranker is failing.
+- Faithfulness,"The LLM is ignoring the context or ""hallucinating"" from its training data."
+- Answer Relevancy,"Your system prompt is too vague or the LLM is ""drifting"" off-topic."
